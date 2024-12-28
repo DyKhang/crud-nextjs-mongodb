@@ -10,7 +10,7 @@ export default async function page({
 }) {
   const { id } = await params;
   const data: ProductResType = await fetch(
-    `http://localhost:3000/api/products/${id}`,
+    `${process.env.NEXTAPI_URL}/products/${id}`,
   ).then((res) => res.json());
 
   return (
