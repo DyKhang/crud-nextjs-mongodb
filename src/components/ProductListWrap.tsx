@@ -5,7 +5,7 @@ import { ProductsResType } from "@/models/product";
 
 export const ProductListWrap = async ({ page }: { page: string }) => {
   const data = await fetch(
-    `http://localhost:3000/api/products${page ? `?page=${page}` : "?page=1"}`,
+    `${process.env.NEXTAPI_URL}/products${page ? `?page=${page}` : "?page=1"}`,
   );
 
   const res: ProductsResType = await data.json();
